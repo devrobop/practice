@@ -1,5 +1,5 @@
 source=common.sh
-compomemt=user
+component=user
 app_path=/app
 
 NODEJS
