@@ -1,6 +1,6 @@
 source common.sh
 component=dispatch
-
+app_path=/app
 
 PRINT Install Golang
 dnf install golang -y &>>$LOG_FILE
