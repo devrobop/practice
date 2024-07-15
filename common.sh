@@ -10,7 +10,7 @@ PRINT() {
 }
 
 STAT() {
-  if [$1 -eq 0 ]; then
+  if [ $1 -eq 0 ]; then
     echo -e "\e[32mSUCCESS\e[0m"
   else
     echo -e "\e[31mFAILURE\e[0m"
@@ -111,7 +111,8 @@ JAVA() {
 
 SCHEMA_SETUP(){
        
-  if [ "$schema_setup" == "mongo"]  
+  if [ "$schema_setup" == "mongo"]  ;then
+
     PRINT Copy Repo file 
     cp mongo.repo /etc/yum.repos.d/mongo.repo &>>$LOG_FILE  
     STAT $?    
@@ -124,8 +125,7 @@ SCHEMA_SETUP(){
     mongosh --host mongo.dev.devrobo.online </app/db/master-data.js &>>$LOG_FILE
     STAT $?
   fi
-
-  if [ "$schema_setup" == "mysql"]    
+  if [ "$schema_setup" == "mysql"] ; then   
     PRINT Install Mysql Client 
     dnf install mysql -y &>>$LOG_FILE
     STAT $?   
