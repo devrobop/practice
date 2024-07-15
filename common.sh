@@ -11,9 +11,9 @@ PRINT() {
 
 STAT() {
   if [$1 -eq 0 ]; then
-    echo -e "e\[32mSUCCESS\e[0m"
+    echo -e "\e[32mSUCCESS\e[0m"
   else
-    echo -e "e\[31mFAILURE\e[0m"
+    echo -e "\e[31mFAILURE\e[0m"
     echo 
     echo "Refer the log file for more information : File path : ${LOG_FILE}"
     exit $1
@@ -123,7 +123,7 @@ SCHEMA_SETUP(){
     PRINT load Masterdata
     mongosh --host mongo.dev.devrobo.online </app/db/master-data.js &>>$LOG_FILE
     STAT $?
-  fi
+   fi
 
   if [ "$schema_setup" == "mysql"]    
     PRINT Install Mysql Client 
