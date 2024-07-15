@@ -22,7 +22,7 @@ STAT() {
 APP_PREREQ() {
   
   PRINT Adding user 
-  if [ $? -ne 0]; then 
+  if [ $? -ne 0 ]; then 
     useradd roboshop &>>$LOG_FILE
   fi   
   STAT $?   
