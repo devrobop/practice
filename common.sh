@@ -123,7 +123,7 @@ SCHEMA_SETUP(){
     PRINT load Masterdata
     mongosh --host mongo.dev.devrobo.online </app/db/master-data.js &>>$LOG_FILE
     STAT $?
-   fi
+  fi
 
   if [ "$schema_setup" == "mysql"]    
     PRINT Install Mysql Client 
