@@ -50,7 +50,7 @@ APP_PREREQ() {
 
 SYSTEMD_SETUP() {
   PRINT Copy Service file
-  cp $(code_dir)/${component}.service /etc/systemd/system/${component}.service &>>$LOG_FILE
+  cp ${code_dir}/${component}.service /etc/systemd/system/${component}.service &>>$LOG_FILE
   STAT $?    
        
   PRINT Start service
@@ -111,7 +111,7 @@ JAVA() {
 
 SCHEMA_SETUP(){
        
-  if [ "$schema_setup" == "mongo"]  ;then
+  if [ "$schema_setup" == "mongo" ]  ;then
 
     PRINT Copy Repo file 
     cp mongo.repo /etc/yum.repos.d/mongo.repo &>>$LOG_FILE  
@@ -125,7 +125,7 @@ SCHEMA_SETUP(){
     mongosh --host mongo.dev.devrobo.online </app/db/master-data.js &>>$LOG_FILE
     STAT $?
   fi
-  if [ "$schema_setup" == "mysql"] ; then   
+  if [ "$schema_setup" == "mysql" ] ; then   
     PRINT Install Mysql Client 
     dnf install mysql -y &>>$LOG_FILE
     STAT $?   
