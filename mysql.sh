@@ -1,5 +1,5 @@
 source common.sh
-component=mongo
+component=mysql
 
 
 PRINT Install mysql
